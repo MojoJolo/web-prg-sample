@@ -1,0 +1,23 @@
+<html>
+<head>
+</head>
+<body>
+    {% if message %}
+        <h1>{{ message }}</h1>
+        <br>
+        {{ name }}
+        <br>
+        {{ password }}
+        <br><br>
+
+        {{ request_form }}
+    {% endif %}
+
+    <form method="POST" action="{{ url_for('login') }}">
+        Name: <input type="text" name="name">
+        <br>
+        Password: <input type="password" name="password">
+        <input type="submit">
+    </form>
+</body>
+</html>

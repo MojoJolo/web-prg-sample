@@ -1,0 +1,29 @@
+<html>
+<head>
+</head>
+<body>
+    <form method="POST" action="{{ url_for('register') }}">
+        Name: <input type="text" name="name">
+        <br>
+
+        Password: <input type="password" name="password">
+
+        <br>
+
+        Re enter Password: <input type="password" name="password2">
+
+        <input type="submit" value="Register">
+    </form>
+
+
+    <h1>LOGIN</h1>
+    <form method="POST" action="{{ url_for('login') }}">
+        Name: <input type="text" name="name">
+        <br>
+
+        Password: <input type="password" name="password">
+
+        <input type="submit" value="Login">
+    </form>
+</body>
+</html>
