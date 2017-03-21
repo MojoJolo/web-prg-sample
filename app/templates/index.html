@@ -1,5 +1,6 @@
 <html>
 <head>
+    <script src="{{ url_for('static', filename='js/jquery-3.2.0.min.js') }}" charset="utf-8"></script>
 </head>
 <body>
     <form method="POST" action="{{ url_for('register') }}">
@@ -25,5 +26,46 @@
 
         <input type="submit" value="Login">
     </form>
+
+    <script type="text/javascript">
+        function load_more_content() {
+            // step 1
+            $.get("{{ url_for('load_more_content') }}",
+                // step 2
+                {"data": 12345},
+                // step 3
+                function(data) {
+                    $("#more_content").html(
+                        "<ul class='movie'><li>" + 
+                        data['name'] + "</li><li>" + 
+                        data['age'] + "</li><li>" + 
+                        data['height'] + "</li><li>" + 
+                        data['weight'] + "</li><li>" + 
+                        data['movies'] + "</li></ul>"
+                    )
+                })
+        }
+    </script>
+
+    <h1>LOAD MORE CONTENT</h1>
+    <div id="more_content"></div>
+    <button onclick="load_more_content()" href="#post">LOAD</button>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
